@@ -2,15 +2,27 @@ function romanCalculator(operation) {
 
     let [firstOperand, operator, secondOperand] = operation.split(' ') 
 
-    firstOperand = +firstOperand
-    secondOperand = +secondOperand
-    console.log(typeof firstOperand)
-    console.log(operator)
-    console.log(secondOperand)
+    const romanDict = ['I', 'II', 'III']
+    const romanObj = {
+        'I': 1,
+        'II': 2,
+        'III': 3,
+    }
+    if ( romanDict.includes(firstOperand)) {
+    }
+    for ( let i of Object.entries(romanObj)) {
+        
+    }
+    // firstOperand = +firstOperand
+    // secondOperand = +secondOperand
 
+    // console.log(romanObj[firstOperand])
+    // console.log(romanObj[secondOperand])
     switch(operator) {
         case '+': 
-        return firstOperand + secondOperand;
+        let sum = romanObj[firstOperand] + romanObj[secondOperand];
+        console.log(sum)
+        return romanDict[sum - 1]
         case '-': 
         return firstOperand - secondOperand;
         case '*': 
@@ -20,5 +32,5 @@ function romanCalculator(operation) {
     }
 }
 
-console.log(romanCalculator('I + 5'))
+console.log(romanCalculator('I + II'))
 
